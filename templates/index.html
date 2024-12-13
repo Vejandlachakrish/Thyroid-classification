@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thyroid Function Prediction</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+        padding: 20px;
+      }
+      .container {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        max-width: 600px;
+        margin: auto;
+      }
+      h2 {
+        color: #495057;
+        margin-bottom: 30px;
+      }
+      .form-group label {
+        font-weight: bold;
+        color: #495057;
+      }
+      .form-control {
+        border-radius: 5px;
+        border: 1px solid #ced4da;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+      }
+      .form-control:focus {
+        border-color: #80bdff;
+        box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+      }
+      button.btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-weight: bold;
+      }
+      button.btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #004085;
+      }
+      .result-box {
+        background-color: #e9f7ef;
+        border-left: 5px solid #28a745;
+        padding: 15px;
+        margin-top: 20px;
+        border-radius: 5px;
+      }
+      .result-box h4 {
+        margin: 0;
+        color: #155724;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="mt-5 text-center">Thyroid Function Prediction</h2>
+      <form action="/predict" method="POST" class="mt-4">
+        <!-- Display prediction result -->
+        {% if prediction_text %}
+        <div class="result-box">
+          <h4>Prediction: {{ prediction_text }}</h4>
+        </div>
+        {% endif %}
+        <!-- Age input -->
+        <div class="form-group">
+          <label for="Age">Age</label>
+          <input
+            type="number"
+            class="form-control"
+            id="Age"
+            name="Age"
+            required
+          />
+        </div>
+
+        <!-- Gender dropdown -->
+        <div class="form-group">
+          <label for="Gender">Gender</label>
+          <select class="form-control" id="Gender" name="Gender" required>
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+
+        <!-- Smoking dropdown -->
+        <div class="form-group">
+          <label for="Smoking">Smoking</label>
+          <select class="form-control" id="Smoking" name="Smoking" required>
+            <option value="">Select Smoking Status</option>
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+          </select>
+        </div>
+
+        <!-- Physical Examination dropdown -->
+        <div class="form-group">
+          <label for="PhysicalExamination">Physical Examination</label>
+          <select
+            class="form-control"
+            id="PhysicalExamination"
+            name="PhysicalExamination"
+            required
+          >
+            <option value="">Select Physical Examination</option>
+            <option value="Diffuse goiter">Diffuse goiter</option>
+            <option value="Multinodular goiter">Multinodular goiter</option>
+            <option value="Normal">Normal</option>
+            <option value="Single nodular goiter-left">
+              Single nodular goiter-left
+            </option>
+            <option value="Single nodular goiter-right">
+              Single nodular goiter-right
+            </option>
+          </select>
+        </div>
+
+        <!-- Pathology dropdown -->
+        <div class="form-group">
+          <label for="Pathology">Pathology</label>
+          <select class="form-control" id="Pathology" name="Pathology" required>
+            <option value="">Select Pathology</option>
+            <option value="Follicular">Follicular</option>
+            <option value="Hurthel cell">Hurthel cell</option>
+            <option value="Micropapillary">Micropapillary</option>
+            <option value="Papillary">Papillary</option>
+          </select>
+        </div>
+
+        <!-- Focality dropdown -->
+        <div class="form-group">
+          <label for="Focality">Focality</label>
+          <select class="form-control" id="Focality" name="Focality" required>
+            <option value="">Select Focality</option>
+            <option value="Uni-focal">Uni-focal</option>
+            <option value="Multi-focal">Multi-focal</option>
+          </select>
+        </div>
+
+        <!-- Risk dropdown -->
+        <div class="form-group">
+          <label for="Risk">Risk</label>
+          <select class="form-control" id="Risk" name="Risk" required>
+            <option value="">Select Risk Level</option>
+            <option value="High">High</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Low">Low</option>
+          </select>
+        </div>
+
+        <!-- Stage dropdown -->
+        <div class="form-group">
+          <label for="Stage">Stage</label>
+          <select class="form-control" id="Stage" name="Stage" required>
+            <option value="">Select Stage</option>
+            <option value="I">I</option>
+            <option value="II">II</option>
+            <option value="III">III</option>
+            <option value="IVA">IVA</option>
+            <option value="IVB">IVB</option>
+          </select>
+        </div>
+
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary w-100">Predict</button>
+      </form>
+    </div>
+  </body>
+</html>

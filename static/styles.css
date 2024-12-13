@@ -1,0 +1,92 @@
+.container{
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.navbar {
+    height: auto;
+    width: 100%;
+    background-color: black;
+    color: white;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 0;
+    position: fixed;
+}
+
+.form-group{
+    display: block;
+}
+
+marquee {
+    background-color: rgb(61, 53, 53);
+    color: white;
+    padding: 5px;
+    font-size: 18px;
+    margin-top: 0; /* Remove top margin */
+}
+
+.heading{
+    width: 300px;
+    margin-right: 65%;
+    margin-left: -2%;
+}
+
+.navbar h2 {
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+.navbar .abobtn {
+    background-color: black;
+    border-color: black;
+    color: white;
+}
+.abobtn :hover{
+    background-color: white;
+}
+
+marquee {
+    color: white;
+    background-color: #333;
+    font-size: 15px;
+    height: 30px;
+    padding: 3px;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.about{
+    display: flex;
+    text-align: right;
+    font-size: 20px;
+}
+
+.aboutbtn{
+    border: none;
+    background-color: black;
+    color: white;
+}
+
+.signbtn{
+    border: none;
+    background-color: black;
+    color: white;
+}
+
+.image{
+    margin-bottom: 0.5%;
+}
